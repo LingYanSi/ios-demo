@@ -14,6 +14,16 @@
 		5F4813851D85116000A7374E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F4813831D85116000A7374E /* LaunchScreen.storyboard */; };
 		5F4813901D85116000A7374E /* clTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48138F1D85116000A7374E /* clTests.swift */; };
 		5F48139B1D85116000A7374E /* clUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48139A1D85116000A7374E /* clUITests.swift */; };
+		5F4813AB1D86B32300A7374E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4813AA1D86B32300A7374E /* WebView.swift */; };
+		5F6887791D968E8C00526E74 /* Fecth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6887781D968E8C00526E74 /* Fecth.swift */; };
+		5F68877B1D97B60800526E74 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F68877A1D97B60800526E74 /* Modal.swift */; };
+		5F68877D1D98FB2C00526E74 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F68877C1D98FB2C00526E74 /* Theme.swift */; };
+		5F9026D21D8EAC3800458AD8 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026D11D8EAC3800458AD8 /* Camera.swift */; };
+		5F9026D41D8EEED800458AD8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026D31D8EEED800458AD8 /* CameraViewController.swift */; };
+		5F9026D81D8FD1C900458AD8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026D71D8FD1C900458AD8 /* Router.swift */; };
+		5F9026DA1D90D33F00458AD8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026D91D90D33F00458AD8 /* ImageCache.swift */; };
+		5F9026DD1D90E88700458AD8 /* md5-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026DC1D90E88700458AD8 /* md5-Bridging-Header.m */; };
+		5F9026DF1D90E8FC00458AD8 /* StringMd5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9026DE1D90E8FC00458AD8 /* StringMd5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,17 @@
 		5F4813961D85116000A7374E /* clUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F48139A1D85116000A7374E /* clUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clUITests.swift; sourceTree = "<group>"; };
 		5F48139C1D85116000A7374E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F4813AA1D86B32300A7374E /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		5F6887781D968E8C00526E74 /* Fecth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fecth.swift; sourceTree = "<group>"; };
+		5F68877A1D97B60800526E74 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		5F68877C1D98FB2C00526E74 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5F9026D11D8EAC3800458AD8 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		5F9026D31D8EEED800458AD8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		5F9026D71D8FD1C900458AD8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5F9026D91D90D33F00458AD8 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5F9026DB1D90E88600458AD8 /* cl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cl-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F9026DC1D90E88700458AD8 /* md5-Bridging-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "md5-Bridging-Header.m"; sourceTree = "<group>"; };
+		5F9026DE1D90E8FC00458AD8 /* StringMd5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMd5.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +124,17 @@
 				5F4813811D85116000A7374E /* Assets.xcassets */,
 				5F4813831D85116000A7374E /* LaunchScreen.storyboard */,
 				5F4813861D85116000A7374E /* Info.plist */,
+				5F4813AA1D86B32300A7374E /* WebView.swift */,
+				5F9026D11D8EAC3800458AD8 /* Camera.swift */,
+				5F9026D31D8EEED800458AD8 /* CameraViewController.swift */,
+				5F9026D71D8FD1C900458AD8 /* Router.swift */,
+				5F9026D91D90D33F00458AD8 /* ImageCache.swift */,
+				5F9026DC1D90E88700458AD8 /* md5-Bridging-Header.m */,
+				5F9026DB1D90E88600458AD8 /* cl-Bridging-Header.h */,
+				5F9026DE1D90E8FC00458AD8 /* StringMd5.swift */,
+				5F6887781D968E8C00526E74 /* Fecth.swift */,
+				5F68877A1D97B60800526E74 /* Modal.swift */,
+				5F68877C1D98FB2C00526E74 /* Theme.swift */,
 			);
 			path = cl;
 			sourceTree = "<group>";
@@ -193,13 +225,17 @@
 				TargetAttributes = {
 					5F4813761D85116000A7374E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E2NXYK26AZ;
+						LastSwiftMigration = 0800;
 					};
 					5F48138A1D85116000A7374E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5F4813761D85116000A7374E;
 					};
 					5F4813951D85116000A7374E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5F4813761D85116000A7374E;
 					};
 				};
@@ -256,8 +292,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F68877B1D97B60800526E74 /* Modal.swift in Sources */,
+				5F9026D21D8EAC3800458AD8 /* Camera.swift in Sources */,
+				5F6887791D968E8C00526E74 /* Fecth.swift in Sources */,
+				5F9026D41D8EEED800458AD8 /* CameraViewController.swift in Sources */,
+				5F9026DF1D90E8FC00458AD8 /* StringMd5.swift in Sources */,
+				5F68877D1D98FB2C00526E74 /* Theme.swift in Sources */,
+				5F4813AB1D86B32300A7374E /* WebView.swift in Sources */,
 				5F48137D1D85116000A7374E /* ViewController.swift in Sources */,
+				5F9026D81D8FD1C900458AD8 /* Router.swift in Sources */,
+				5F9026DA1D90D33F00458AD8 /* ImageCache.swift in Sources */,
 				5F48137B1D85116000A7374E /* AppDelegate.swift in Sources */,
+				5F9026DD1D90E88700458AD8 /* md5-Bridging-Header.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +445,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = E2NXYK26AZ;
 				INFOPLIST_FILE = cl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.cl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cl/cl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -410,10 +462,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = E2NXYK26AZ;
 				INFOPLIST_FILE = cl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.cl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cl/cl-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -425,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.clTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cl.app/cl";
 			};
 			name = Debug;
@@ -437,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.clTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cl.app/cl";
 			};
 			name = Release;
@@ -448,6 +507,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.clUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = cl;
 			};
 			name = Debug;
@@ -459,6 +519,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caoliushequ.clUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = cl;
 			};
 			name = Release;
@@ -482,6 +543,7 @@
 				5F4813A11D85116000A7374E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F4813A21D85116000A7374E /* Build configuration list for PBXNativeTarget "clTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +552,7 @@
 				5F4813A41D85116000A7374E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F4813A51D85116000A7374E /* Build configuration list for PBXNativeTarget "clUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +561,7 @@
 				5F4813A71D85116000A7374E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
