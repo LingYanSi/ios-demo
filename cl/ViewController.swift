@@ -9,14 +9,21 @@
 
 import UIKit
 
+/**
+ * 继承UIViewController用于UI显示
+ * 继承UIImagePickerControllerDelegate协议
+ * 继承UINavigationControllerDelegate协议
+ */
 class ViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     
     var webView: WebView
+    
     @IBOutlet weak var urlText: UITextField!
     
     @IBOutlet weak var urlBtn: UIButton!
     
     @IBAction func urlBtnCick(_ sender: AnyObject) {
+        // 响应点击事件，并获取urlText内的值
         if let url = urlText.text {
             print(url)
             request(url: url)
@@ -48,34 +55,25 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate , UINav
         self.webView = WebView()
         super.init(coder: aDecoder)!
     }
-    var ni = "宋小凡"
+    var ni = "哈哈哈"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(webView)
         self.webView.setPosition(view)
         self.webView.setUrl("https://lingyansi.space")
-        print(self.webView.url)
+        print(self.webView.url ?? "默认url")
         
-        print(self.webView.backForwardList.item(at: 1))
+        print(self.webView.backForwardList.item(at: 1) ?? "default value")
         
         // 关闭自动校正
         urlText.autocorrectionType = UITextAutocorrectionType.no 
         
-//        jump("camera")
         Fetch(url:"https://www.zhihu.com").then(fuck: {(result: String) -> Void in
             print(self.ni, result)
         })
-//        a.then
-        
-//        let alert = Modal.alert()
-//        self.present(alert, animated: true, completion: nil)
         
         _ = Modal.tip(view: self.view!)
  
-    }
-    
-    func sth (){
-        
     }
     
     override func didReceiveMemoryWarning() {
