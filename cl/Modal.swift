@@ -55,7 +55,7 @@ class Modal : UIViewController{
     
     static func tip(view: UIView) -> UILabel {
         let tip = UILabel()
-        let width = view.bounds.width
+//        let width = view.bounds.width
         
 //        tip.frame = CGRect(x: 0, y: 0, width: width/2, height: 200)
         
@@ -85,7 +85,7 @@ class Modal : UIViewController{
         
         // 宽度确定，计算高度， 高度确定计算宽度
         let text:String = tip.text!//获取label的text
-        let attributes = [NSFontAttributeName: tip.font!]//计算label的字体
+        _ = [NSFontAttributeName: tip.font!]//计算label的字体
         var size = CGRect();
         let size2 = CGSize(width: 100, height: 0);//设置label的最大宽度
         

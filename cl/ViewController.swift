@@ -8,13 +8,19 @@
 
 
 import UIKit
+import Alamofire
+import Kingfisher
+import QRCodeReader
+import AVFoundation
+import MapKit
+import URLNavigator
 
 /**
  * 继承UIViewController用于UI显示
  * 继承UIImagePickerControllerDelegate协议
  * 继承UINavigationControllerDelegate协议
  */
-class ViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+class ViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate, QRCodeReaderViewControllerDelegate{
     
     var webView: WebView
     
@@ -22,13 +28,16 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate , UINav
     
     @IBOutlet weak var urlBtn: UIButton!
     
+    @IBOutlet weak var map: MKMapView!
+    
     @IBAction func urlBtnCick(_ sender: AnyObject) {
         // 响应点击事件，并获取urlText内的值
-        if let url = urlText.text {
-            print(url)
-            request(url: url)
-        }
-        
+//        if let url = urlText.text {
+//            print(url)
+//            request(url: url)
+//        }
+
+        self.jump("11")
 //        urlText.endEditing(true)
 //        self.webView.setUrl(url)
     }
@@ -65,14 +74,18 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate , UINav
         
         print(self.webView.backForwardList.item(at: 1) ?? "default value")
         
+//        self.view.insertSubview(self.map, aboveSubview: self.webView)
+        
         // 关闭自动校正
         urlText.autocorrectionType = UITextAutocorrectionType.no 
         
-        Fetch(url:"https://www.zhihu.com").then(fuck: {(result: String) -> Void in
-            print(self.ni, result)
-        })
+//        Fetch(url:"https://www.zhihu.com").then(fuck: {(result: String) -> Void in
+//            print(self.ni, result)
+//        })
         
         _ = Modal.tip(view: self.view!)
+        
+        testHttp()
  
     }
     
@@ -80,16 +93,22 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate , UINav
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func testHttp(){
+        Alamofire.request("https://lingyansi.space").responseString { response in
+            print(response)
+        }
+    }
     // 页面跳转
     func jump(_ id: String) {
-        let sb = UIStoryboard(name: "Main", bundle:nil)
+        Navigator.push("myapp://user/10")
         
-        let vc = sb.instantiateViewController(withIdentifier: id) 
-        
-        //VC为该界面storyboardID，Main.storyboard中选中该界面View，Identifier inspector中修改
-        
-        self.present(vc, animated: true, completion: nil)
+//        let sb = UIStoryboard(name: "Main", bundle:nil)
+//        
+//        let vc = sb.instantiateViewController(withIdentifier: id) 
+//        
+//        //VC为该界面storyboardID，Main.storyboard中选中该界面View，Identifier inspector中修改
+//        
+//        self.present(vc, animated: true, completion: nil)
 //        self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
     }
     
@@ -121,12 +140,55 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate , UINav
                 }catch{
                     // data 转 字符串
                     let str = String(data: data!, encoding: String.Encoding.utf8)
-                    print("请求字符串", str)
+                    print("请求字符串", str ?? "xx")
                 }
             }
         })
         
         // 启动请求
         task.resume()
+    }
+    
+    // Good practice: create the reader lazily to avoid cpu overload during the
+    // initialization and each time we need to scan a QRCode
+    lazy var readerVC = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
+        $0.reader = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode], captureDevicePosition: .back)
+    })
+    
+    @IBAction func qrClick(_ sender: Any) {
+        // Retrieve the QRCode content
+        // By using the delegate pattern
+        readerVC.delegate = self
+        
+        // Or by using the closure pattern
+        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+            print(result ?? "default")
+        }
+        
+        // Presents the readerVC as modal form sheet
+        readerVC.modalPresentationStyle = .formSheet
+        present(readerVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - QRCodeReaderViewController Delegate Methods
+    
+    func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+        reader.stopScanning()
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //This is an optional delegate method, that allows you to be notified when the user switches the cameraName
+    //By pressing on the switch camera button
+    func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
+        if let cameraName = newCaptureDevice.device.localizedName {
+            print("Switching capturing to: \(cameraName)")
+        }
+    }
+    
+    func readerDidCancel(_ reader: QRCodeReaderViewController) {
+        reader.stopScanning()
+        
+        dismiss(animated: true, completion: nil)
     }
 }

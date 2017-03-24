@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
+import URLNavigator
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, URLNavigable {
     
     var width : CGFloat = CGFloat(0)
     var height : CGFloat = CGFloat(0)
@@ -19,9 +21,22 @@ class CameraViewController: UIViewController {
     
     var Table:UITableView = UITableView()
     
+    init(userID: Int) {
+        super.init(nibName: nil, bundle: nil)
+        // Initialize here...
+    }
+    
     required init?(coder aDecoder: NSCoder) {
          
         super.init(coder: aDecoder)!
+    }
+    
+    convenience required init?(url: URLConvertible, values: [String: Any], userInfo: [AnyHashable: Any]?) {
+        // Let's assume that the user id is required
+        guard let userID = values["id"] as? Int else { return nil }
+        print(userID, "你好")
+        self.init(userID: userID)
+        
     }
     
     override func viewDidLoad() {
@@ -86,12 +101,7 @@ class CameraViewController: UIViewController {
                 Image.image = image
             }
             
-        }
-        
-        
- 
-
-
+        } 
         // 设置背景色 rgb为<=1的float类型
 //        Image.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
         
@@ -204,10 +214,12 @@ extension CameraViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cellImageTag : Int = fuckDictionary[cellTag] ?? 0
         
-        
         if cellImageTag > 0 {
-            let Image: UIImageView = cell.contentView.viewWithTag(cellImageTag) as! UIImageView
-            setImage(url: url, Image: Image )
+           let Image: UIImageView = cell.contentView.viewWithTag(cellImageTag) as! UIImageView
+//            setImage(url: url, Image: Image )
+            
+            let urlFuck = URL(string: url)
+            Image.kf.setImage(with: urlFuck)
             
         } else {
             print("新建后渲染")
@@ -225,11 +237,15 @@ extension CameraViewController: UITableViewDataSource, UITableViewDelegate {
             
             fuckDictionary[cell.tag] = imageTag
             
+            let urlFuck = URL(string: url)
+            Image.kf.setImage(with: urlFuck)
+            
             cell.contentView.addSubview( Image )
-            setImage(url: url, Image: Image )
+//            setImage(url: url, Image: Image )
+            
         }
         
-        print("数量", cell.contentView.subviews.count, cellTag, cellImageTag, fuckDictionary)
+//        print("数量", cell.contentView.subviews.count, cellTag, cellImageTag, fuckDictionary)
         return cell
         
     }

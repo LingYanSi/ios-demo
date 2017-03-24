@@ -1,0 +1,4 @@
+github "https://github.com/onevcat/Kingfisher"
+github "https://github.com/Alamofire/Alamofire"
+github "yannickl/QRCodeReader.swift" >= 7.3.0
+github "devxoul/URLNavigator" ~> 1.1
